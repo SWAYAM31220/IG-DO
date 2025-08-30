@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-download"></i> Multimedia Downloader</h1>
+                <p>Download videos and images from Instagram, TikTok, YouTube, and more!</p>
+            </div>
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <i class="fas fa-link input-icon"></i>
+                        <input 
+                            type="url" 
+                            id="urlInput" 
+                            placeholder="Paste your social media link here..."
+                            class="url-input"
+                        >
+                        <button id="clearBtn" class="clear-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <button id="downloadBtn" class="download-btn">
+                        <i class="fas fa-search"></i>
+                        <span>Get Download Link</span>
+                    </button>
+                </div>
+                
+                <div class="platform-selector">
+                    <label for="platformSelect">Platform (auto-detected):</label>
+                    <select id="platformSelect" class="platform-select">
+                        <option value="auto">Auto Detect</option>
+                        <option value="reel">Instagram Reel</option>
+                        <option value="igpost">Instagram Post</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="threads">Threads</option>
+                        <option value="pinterest">Pinterest</option>
+                        <option value="twitter">Twitter/X</option>
+                        <option value="pornhub">Pornhub</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Processing your request...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="errorText"></p>
+            </div>
+
+            <div id="resultSection" class="result-section hidden">
+                <div class="result-header">
+                    <h3 id="resultTitle">Download Ready</h3>
+                    <div id="resultMeta" class="result-meta"></div>
+                </div>
+                
+                <div id="mediaContainer" class="media-container">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="supported-platforms">
+                <h3>Supported Platforms</h3>
+                <div class="platform-icons">
+                    <div class="platform-icon" data-platform="reel">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </div>
+                    <div class="platform-icon" data-platform="tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </div>
+                    <div class="platform-icon" data-platform="youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </div>
+                    <div class="platform-icon" data-platform="facebook">
+                        <i class="fab fa-facebook"></i>
+                        <span>Facebook</span>
+                    </div>
+                    <div class="platform-icon" data-platform="twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter/X</span>
+                    </div>
+                    <div class="platform-icon" data-platform="pinterest">
+                        <i class="fab fa-pinterest"></i>
+                        <span>Pinterest</span>
+                    </div>
+                </div>
+            </div>
+            <p class="disclaimer">
+                <i class="fas fa-info-circle"></i>
+                Please respect copyright and terms of service of the platforms.
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
